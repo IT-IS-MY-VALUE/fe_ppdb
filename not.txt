@@ -1,0 +1,52 @@
+📁 src/
+├── assets/                # File CSS/SCSS, gambar, fonts, dll (tidak diakses publik langsung)
+│   ├── css/
+│   └── images/
+
+├── components/            # Komponen global/lokal (button, card, form, dsb)
+│   ├── ui/
+│   └── layout/
+
+├── composables/           # Fungsi reusable (mirip controller/helper)
+│   └── useAuth.ts
+
+├── layouts/               # Layout global/khusus (default.vue, admin.vue, guest.vue)
+│   ├── default.vue
+│   └── admin.vue
+
+├── middleware/            # Middleware (untuk auth, guard routing, dll)
+│   └── auth.global.ts
+
+├── pages/                 # Routing otomatis (halaman utama)
+│   ├── index.vue              # / (home)
+│   ├── login.vue              # /login
+│   ├── siswa/
+│   │   ├── index.vue          # /siswa
+│   │   └── [id].vue           # /siswa/:id
+
+├── plugins/               # Register plugin pihak ketiga (axios, vee-validate, dll)
+│   ├── axios.ts
+│   └── toast.client.ts
+
+├── public/                # Aset publik (langsung diakses via URL)
+│   └── logo.png
+
+├── server/                # Backend API (built-in server Nuxt)
+│   ├── api/
+│   │   ├── siswa/
+│   │   │   ├── index.get.ts      # GET /api/siswa
+│   │   │   └── index.post.ts     # POST /api/siswa
+│   └── middleware/
+│       └── auth.ts              # Middleware server (misalnya cek JWT)
+
+├── stores/                # Pinia store (state management)
+│   └── auth.ts
+
+├── types/                 # Tipe global untuk TypeScript (interface, dll)
+│   └── siswa.d.ts
+
+├── utils/                 # Fungsi utilitas umum
+│   └── formatter.ts
+
+├── app.vue                # Root wrapper, biasanya hanya <NuxtPage />
+└── error.vue              # Default error page
