@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   // Mengatur agar Nuxt membaca struktur dari folder 'src'
   srcDir: './src',
@@ -11,6 +12,7 @@ export default defineNuxtConfig({
 
   // CSS global yang akan dimuat ke seluruh aplikasi
   // css: ['~/assets/css/main.css'],
+  css: ['./assets/css/tailwind.css'],
 
   // // Module yang digunakan, misal Pinia untuk state management
   // modules: [
@@ -19,4 +21,9 @@ export default defineNuxtConfig({
   //   // '@nuxtjs/tailwindcss',
   //   // '@vueuse/nuxt',
   // ],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 })
